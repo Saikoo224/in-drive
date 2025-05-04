@@ -228,15 +228,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       bottomLeft: Radius.circular(24),
                       bottomRight: Radius.circular(24),
                     ),
-                    child: Container(
-                      color: Colors.grey[300],
-                      child: Center(
-                        child: Icon(
-                          Icons.map,
-                          size: 50,
-                          color: Colors.grey[600],
-                        ),
-                      ),
+                    child: Image.asset(
+                      'lib/assets/map_sample.png',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          color: Colors.grey[300],
+                          child: Center(
+                            child: Icon(
+                              Icons.map,
+                              size: 50,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ),
