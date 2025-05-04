@@ -384,7 +384,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               return StatefulBuilder(
                                 builder: (BuildContext context, StateSetter setState) {
                                   return AlertDialog(
-                                    title: Text('تفاصيل المكان'),
+                                    title: Text('تفاصيل الرحلة'),
                                     content: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
