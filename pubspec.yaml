@@ -26,10 +26,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # إذا لم تكن هذه المجلدات موجودة، احذف أو علق الأسطر التالية
-assets:
-  #   - assets/images/
-  #   - assets/icons/
+  assets:
+    - lib/assets/
+    - lib/assets/map_sample.png
+    - assets/images/
+    - assets/icons/
   # fonts:
   #   - family: Cairo
   #     fonts:
