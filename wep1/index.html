@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبودي - متجر الكتب السياحية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>عبودي - متجر الكتب السياحية</h1>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">الكتب</a></li>
+                <li><a href="#">من نحن</a></li>
+                <li><a href="#">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>اكتشف كنوز مصر بين صفحات كتبنا</h2>
+    </section>
+
+    <section class="books">
+        <h2>الكتب المتاحة</h2>
+        <div class="book-list">
+            <div class="book">
+                <img src="book1.jpg" alt="كتاب 1">
+                <h3>أسرار الفراعنة</h3>
+                <p>150 جنيه</p>
+                <button onclick="addToCart('أسرار الفراعنة', 150)">أضف إلى السلة</button>
+            </div>
+
+            <div class="book">
+                <img src="book2.jpg" alt="كتاب 2">
+                <h3>دليل السياحة في مصر</h3>
+                <p>200 جنيه</p>
+                <button onclick="addToCart('دليل السياحة في مصر', 200)">أضف إلى السلة</button>
+            </div>
+
+            <div class="book">
+                <img src="book3.jpg" alt="كتاب 3">
+                <h3>آثار مصر القديمة</h3>
+                <p>180 جنيه</p>
+                <button onclick="addToCart('آثار مصر القديمة', 180)">أضف إلى السلة</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>سلة المشتريات</h2>
+        <ul id="cart-list"></ul>
+        <p id="total-price">الإجمالي: 0 جنيه</p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
