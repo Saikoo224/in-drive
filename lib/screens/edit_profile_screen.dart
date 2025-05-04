@@ -11,24 +11,23 @@ class EditProfileScreen extends StatelessWidget {
     final emailController = TextEditingController(text: profileProvider.email);
     final numberController = TextEditingController(text: profileProvider.number);
 
-
     return Scaffold(
-      appBar: AppBar(title: Text('تعديل البروفايل')),
+      appBar: AppBar(title: Text('Edit Profile')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: nameController,
-              decoration: InputDecoration(labelText: 'اسم المستخدم'),
+              decoration: InputDecoration(labelText: 'Name'),
             ),
             TextField(
               controller: emailController,
-              decoration: InputDecoration(labelText: 'الإيميل'),
+              decoration: InputDecoration(labelText: 'Email'),
             ),
             TextField(
               controller: numberController,
-              decoration: InputDecoration(labelText: 'الهاتف'),
+              decoration: InputDecoration(labelText: 'Phone Number'),
             ),
             SizedBox(height: 20),
             ElevatedButton(
@@ -40,7 +39,7 @@ class EditProfileScreen extends StatelessWidget {
                 );
                 Navigator.pop(context);
               },
-              child: Text('حفظ'),
+              child: Text('Save'),
             ),
           ],
         ),

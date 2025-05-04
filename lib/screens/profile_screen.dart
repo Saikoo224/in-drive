@@ -11,7 +11,7 @@ class ProfileScreen extends StatelessWidget {
     bool isDark = themeProvider.themeMode == ThemeMode.dark;
 
     return Scaffold(
-      appBar: AppBar(title: Text('البروفايل')),
+      appBar: AppBar(title: Text('Profile')),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -28,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
             SizedBox(height: 24),
             ListTile(
               leading: Icon(Icons.edit),
-              title: Text('تعديل البروفايل'),
+              title: Text('Edit Profile'),
               trailing: Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
                 Navigator.pushNamed(context, '/edit_profile');
@@ -36,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             SwitchListTile(
-              title: Text('تفعيل الدارك مود'),
+              title: Text('Enable Dark Mode'),
               value: isDark,
               onChanged: (val) => themeProvider.toggleTheme(),
               secondary: Icon(isDark ? Icons.dark_mode : Icons.light_mode),
@@ -45,11 +45,11 @@ class ProfileScreen extends StatelessWidget {
             ElevatedButton.icon(
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('تم تسجيل الخروج!')),
+                  SnackBar(content: Text('Logged out successfully!')),
                 );
               },
               icon: Icon(Icons.logout),
-              label: Text('تسجيل الخروج'),
+              label: Text('Logout'),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.red,
                 foregroundColor: Colors.white,

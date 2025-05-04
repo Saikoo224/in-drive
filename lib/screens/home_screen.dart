@@ -35,40 +35,40 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Trip> allTrips = [
     Trip(
-      from: 'القاهرة',
-      to: 'الإسكندرية',
+      from: 'Cairo',
+      to: 'Alexandria',
       price: 500,
       PaymnetMethod: 'Cash',
       fromLocation: LatLng(30.0444, 31.2357),
       toLocation: LatLng(31.2001, 29.9187),
     ),
     Trip(
-      from: 'القاهرة',
-      to: 'الجيزة',
+      from: 'Cairo',
+      to: 'Giza',
       price: 100,
       PaymnetMethod: 'Cash',
       fromLocation: LatLng(30.0444, 31.2357),
       toLocation: LatLng(30.0131, 31.2089),
     ),
     Trip(
-      from: 'الإسكندرية',
-      to: 'أسوان',
+      from: 'Alexandria',
+      to: 'Aswan',
       price: 1200,
       PaymnetMethod: 'Cash',
       fromLocation: LatLng(31.2001, 29.9187),
       toLocation: LatLng(24.0889, 32.8998),
     ),
     Trip(
-      from: 'الجيزة',
-      to: 'الأقصر',
+      from: 'Giza',
+      to: 'Luxor',
       price: 900,
       PaymnetMethod: 'visa',
       fromLocation: LatLng(30.0131, 31.2089),
       toLocation: LatLng(25.6872, 32.6396),
     ),
     Trip(
-      from: 'القاهرة',
-      to: 'شرم الشيخ',
+      from: 'Cairo',
+      to: 'Sharm El Sheikh',
       price: 800,
       PaymnetMethod: 'visa',
       fromLocation: LatLng(30.0444, 31.2357),
@@ -77,8 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List<Map<String, String>> favoritePlaces = [
-    {'title': 'العمل', 'subtitle': 'شارع التحرير، القاهرة', 'icon': 'work'},
-    {'title': 'المنزل', 'subtitle': 'مدينة نصر، القاهرة', 'icon': 'home'},
+    {'title': 'Work', 'subtitle': 'Tahrir St., Cairo', 'icon': 'work'},
+    {'title': 'Home', 'subtitle': 'Nasr City, Cairo', 'icon': 'home'},
   ];
 
   List<Trip> filteredTrips = [];
@@ -116,8 +116,8 @@ class _HomeScreenState extends State<HomeScreen> {
           markerId: MarkerId('${trip.from}-${trip.to}'),
           position: trip.fromLocation,
           infoWindow: InfoWindow(
-            title: 'من ${trip.from}',
-            snippet: 'إلى ${trip.to}',
+            title: 'From ${trip.from}',
+            snippet: 'To ${trip.to}',
           ),
         ),
       );
@@ -151,127 +151,46 @@ class _HomeScreenState extends State<HomeScreen> {
             ListTile(
               title: const Text("Notification"),
               leading: Icon(Icons.notifications_active),
-
-              // onTap: () {
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => NotificationPage()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.history),
-
               title: Text("Ride History"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.call),
-
               title: const Text("Contact Us"),
-              // onTap: () {
-              //
-              //       Navigator.push(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => --- ()),
-              //         // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.feedback),
-
               title: Text("Feedback"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.payment),
-
               title: Text("Payments"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               title: Text("Settings"),
               leading: Icon(Icons.settings),
-
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.bookmark),
-
               title: Text("Booking"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.details_sharp),
               title: Text("Ride Details"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
             ListTile(
               leading: Icon(Icons.map),
-
               title: Text("Map Tracking"),
-              // onTap: () {
-              //
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(builder: (context) => --- ()),
-              //     // page name = ---
-              //   );
-              // },
             ),
           ],
         ),
       ),
-
-      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            // الخريطة مع زر القائمة
+            // Map with menu button
             Stack(
               children: [
                 Container(
@@ -287,12 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         'lib/assets/map_sample.png',
                         fit: BoxFit.cover,
                       )
-
-                      // Image.network(
-                      //   'lib/assets/map_sample.png',
-                      //   fit: BoxFit.cover,
-                      // ),
-                      ),
+                  ),
                 ),
                 Positioned(
                   top: 16,
@@ -325,19 +239,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SizedBox(height: 16),
-            // رسالة ترحيب
+            // Welcome message
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'صباح الخير، أحمد',
+                  'Good morning, Ahmed',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             SizedBox(height: 12),
-            // مربع البحث
+            // Search box
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Container(
@@ -349,157 +263,156 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: TextField(
                   controller: _searchController,
                   decoration: InputDecoration(
-                    hintText: 'إلى أين؟',
+                    hintText: 'Where to?',
                     prefixIcon: Icon(Icons.search, color: Colors.black54),
                     suffixIcon: Icon(Icons.access_time, color: Colors.black38),
                     border: InputBorder.none,
                     contentPadding:
-                        EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                    EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   ),
                 ),
               ),
             ),
             SizedBox(height: 8),
-            // الأماكن المفضلة
+            // Favorite places
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
                 children: [
                   ...favoritePlaces.map((place) => Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4.0),
-                        child: Card(
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: ListTile(
-                            leading: Icon(
-                              place['icon'] == 'work' ? Icons.work : Icons.home,
-                              color: Colors.black,
-                            ),
-                            title: Text(place['title']!),
-                            subtitle: Text(place['subtitle']!),
-                            onTap: () {},
-                          ),
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Card(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ListTile(
+                        leading: Icon(
+                          place['icon'] == 'work' ? Icons.work : Icons.home,
+                          color: Colors.black,
                         ),
-                      )),
+                        title: Text(place['title']!),
+                        subtitle: Text(place['subtitle']!),
+                        onTap: () {},
+                      ),
+                    ),
+                  )),
                 ],
               ),
             ),
             SizedBox(height: 8),
-            // قائمة الرحلات المتاحة
+            // Available trips list
             Expanded(
               child: filteredTrips.isEmpty
-                  ? Center(child: Text('لا توجد رحلات متاحة'))
+                  ? Center(child: Text('No available trips'))
                   : ListView.builder(
-                      itemCount: filteredTrips.length,
-                      itemBuilder: (context, index) {
-                        final trip = filteredTrips[index];
-                        return Card(
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-                          child: ListTile(
-                            title: Text('من ${trip.from} إلى ${trip.to}'),
-                            subtitle: Text('السعر: ${trip.price} جنيه'),
-                            trailing: ElevatedButton(
-                              onPressed: () {
-                                String selectedPaymentMethod = 'Cash';
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return StatefulBuilder(
-                                      builder: (BuildContext context,
-                                          StateSetter setState) {
-                                        return AlertDialog(
-                                          title: Text('تفاصيل الرحلة'),
-                                          content: SingleChildScrollView(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                    'من ${trip.from} إلى ${trip.to}'),
-                                                SizedBox(height: 8),
-                                                Text(
-                                                    'السعر: ${trip.price} جنيه'),
-                                                SizedBox(height: 16),
-                                                Text('اختر طريقة الدفع:'),
-                                                SizedBox(height: 8),
-                                                Container(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 12),
-                                                  decoration: BoxDecoration(
-                                                    border: Border.all(
-                                                        color: Colors.grey),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                  ),
-                                                  child: DropdownButton<String>(
-                                                    value:
-                                                        selectedPaymentMethod,
-                                                    isExpanded: true,
-                                                    underline: SizedBox(),
-                                                    items: ['Cash', 'Visa']
-                                                        .map((String value) {
-                                                      return DropdownMenuItem<
-                                                          String>(
-                                                        value: value,
-                                                        child: Text(value),
-                                                      );
-                                                    }).toList(),
-                                                    onChanged:
-                                                        (String? newValue) {
-                                                      if (newValue != null) {
-                                                        setState(() {
-                                                          selectedPaymentMethod =
-                                                              newValue;
-                                                        });
-                                                      }
-                                                    },
-                                                  ),
-                                                ),
-                                              ],
+                itemCount: filteredTrips.length,
+                itemBuilder: (context, index) {
+                  final trip = filteredTrips[index];
+                  return Card(
+                    margin:
+                    EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+                    child: ListTile(
+                      title: Text('From ${trip.from} to ${trip.to}'),
+                      subtitle: Text('Price: ${trip.price} EGP'),
+                      trailing: ElevatedButton(
+                        onPressed: () {
+                          String selectedPaymentMethod = 'Cash';
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return StatefulBuilder(
+                                builder: (BuildContext context,
+                                    StateSetter setState) {
+                                  return AlertDialog(
+                                    title: Text('Trip Details'),
+                                    content: SingleChildScrollView(
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                              'From ${trip.from} to ${trip.to}'),
+                                          SizedBox(height: 8),
+                                          Text(
+                                              'Price: ${trip.price} EGP'),
+                                          SizedBox(height: 16),
+                                          Text('Select payment method:'),
+                                          SizedBox(height: 8),
+                                          Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 12),
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey),
+                                              borderRadius:
+                                              BorderRadius.circular(
+                                                  8),
+                                            ),
+                                            child: DropdownButton<String>(
+                                              value:
+                                              selectedPaymentMethod,
+                                              isExpanded: true,
+                                              underline: SizedBox(),
+                                              items: ['Cash', 'Visa']
+                                                  .map((String value) {
+                                                return DropdownMenuItem<
+                                                    String>(
+                                                  value: value,
+                                                  child: Text(value),
+                                                );
+                                              }).toList(),
+                                              onChanged:
+                                                  (String? newValue) {
+                                                if (newValue != null) {
+                                                  setState(() {
+                                                    selectedPaymentMethod =
+                                                        newValue;
+                                                  });
+                                                }
+                                              },
                                             ),
                                           ),
-                                          actions: [
-                                            TextButton(
-                                              onPressed: () =>
-                                                  Navigator.pop(context),
-                                              child: Text('إلغاء'),
+                                        ],
+                                      ),
+                                    ),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(context),
+                                        child: Text('Cancel'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                  'Trip confirmed with $selectedPaymentMethod payment'),
                                             ),
-                                            TextButton(
-                                              onPressed: () {
-                                                Navigator.pop(context);
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(
-                                                  SnackBar(
-                                                    content: Text(
-                                                        'تم تأكيد الرحلة مع الدفع $selectedPaymentMethod'),
-                                                  ),
-                                                );
-                                              },
-                                              child: Text('تأكيد'),
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                );
-                              },
-                              child: Text('اختيار'),
-                            ),
-                          ),
-                        );
-                      },
+                                          );
+                                        },
+                                        child: Text('Confirm'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                          );
+                        },
+                        child: Text('Select'),
+                      ),
                     ),
+                  );
+                },
+              ),
             ),
           ],
         ),
       ),
-      // شريط سفلي
       bottomNavigationBar: null,
     );
   }
