@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:uber_clone/screens/Notification.dart';
-import 'package:uber_clone/screens/profile_screen.dart';
 
 class Trip {
   final String from;
@@ -77,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   List<Map<String, String>> favoritePlaces = [
-    {'title': 'Work', 'subtitle': 'Tahrir St., Cairo', 'icon': 'work'},
+    {'title': 'Work', 'subtitle': 'Tahrir Street, Cairo', 'icon': 'work'},
     {'title': 'Home', 'subtitle': 'Nasr City, Cairo', 'icon': 'home'},
   ];
 
@@ -149,63 +147,97 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             ListTile(
+              leading: Icon(Icons.notifications),
               title: const Text("Notification"),
-              leading: Icon(Icons.notifications_active),
+              onTap: () {
+                Navigator.pushNamed(context, '/notifications');
+              },
             ),
             ListTile(
               leading: Icon(Icons.history),
               title: Text("Ride History"),
+              onTap: () {
+                Navigator.pushNamed(context, '/ride-history');
+              },
             ),
             ListTile(
               leading: Icon(Icons.call),
               title: const Text("Contact Us"),
+              onTap: () {
+                Navigator.pushNamed(context, '/support');
+              },
             ),
             ListTile(
               leading: Icon(Icons.feedback),
               title: Text("Feedback"),
+              onTap: () {
+                Navigator.pushNamed(context, '/rating');
+              },
             ),
             ListTile(
               leading: Icon(Icons.payment),
               title: Text("Payments"),
+              onTap: () {
+                Navigator.pushNamed(context, '/payment');
+              },
             ),
             ListTile(
               title: Text("Settings"),
               leading: Icon(Icons.settings),
+              onTap: () {
+                Navigator.pushNamed(context, '/settings');
+              },
             ),
             ListTile(
               leading: Icon(Icons.bookmark),
               title: Text("Booking"),
+              onTap: () {
+                Navigator.pushNamed(context, '/booking');
+              },
             ),
             ListTile(
               leading: Icon(Icons.details_sharp),
               title: Text("Ride Details"),
+              onTap: () {
+                Navigator.pushNamed(context, '/ride-details');
+              },
             ),
             ListTile(
               leading: Icon(Icons.map),
               title: Text("Map Tracking"),
+              onTap: () {
+                Navigator.pushNamed(context, '/map-tracking');
+              },
             ),
           ],
         ),
       ),
+
+      // backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           children: [
-            // Map with menu button
+            // الخريطة مع زر القائمة
             Stack(
               children: [
                 Container(
                   height: 320,
                   width: double.infinity,
                   child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(24),
-                        bottomRight: Radius.circular(24),
+                    borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(24),
+                      bottomRight: Radius.circular(24),
+                    ),
+                    child: Container(
+                      color: Colors.grey[300],
+                      child: Center(
+                        child: Icon(
+                          Icons.map,
+                          size: 50,
+                          color: Colors.grey[600],
+                        ),
                       ),
-                      child:
-                      Image.asset(
-                        'lib/assets/map_sample.png',
-                        fit: BoxFit.cover,
-                      )
+                    ),
                   ),
                 ),
                 Positioned(
@@ -239,19 +271,19 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SizedBox(height: 16),
-            // Welcome message
+            // رسالة ترحيب
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Good morning, Ahmed',
+                  'Good Morning, Ahmed',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             SizedBox(height: 12),
-            // Search box
+            // مربع البحث
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Container(
@@ -274,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 8),
-            // Favorite places
+            // الأماكن المفضلة
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Column(
@@ -301,10 +333,10 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 8),
-            // Available trips list
+            // قائمة الرحلات المتاحة
             Expanded(
               child: filteredTrips.isEmpty
-                  ? Center(child: Text('No available trips'))
+                  ? Center(child: Text('No trips available'))
                   : ListView.builder(
                 itemCount: filteredTrips.length,
                 itemBuilder: (context, index) {
@@ -338,7 +370,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Text(
                                               'Price: ${trip.price} EGP'),
                                           SizedBox(height: 16),
-                                          Text('Select payment method:'),
+                                          Text('Select Payment Method:'),
                                           SizedBox(height: 8),
                                           Container(
                                             padding: EdgeInsets.symmetric(
@@ -413,6 +445,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      // شريط سفلي
       bottomNavigationBar: null,
     );
   }

@@ -16,9 +16,10 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 50,
-              child: Icon(Icons.person, size: 50),
+              backgroundColor: Colors.grey,
+              child: Icon(Icons.person, size: 50, color: Colors.white),
             ),
             SizedBox(height: 16),
             Text(profileProvider.name, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
